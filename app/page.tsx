@@ -253,13 +253,9 @@ export default function HomePage() {
 
       <section className="section-pad dark-panel-section">
         <div className="container dark-panel">
-          <div className="schematic meaningful-schematic" aria-label="Plant diagnostic map">
-            <div className="schematic-grid" />
-            <div className="diagnostic-node production">Production</div>
-            <div className="diagnostic-node maintenance">Maintenance</div>
-            <div className="diagnostic-node utilities">Utilities</div>
-            <div className="diagnostic-node safety">Safety</div>
-            <div className="diagnostic-core">Root Cause</div>
+          <div style={{ position: 'relative', minHeight: 430, border: '1px solid rgba(255,255,255,0.08)', borderRadius: 24, background: 'linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01))', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: '28px 22px 0' }} aria-label="Danish reviewing industrial systems">
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px), radial-gradient(circle at 64% 30%, rgba(255,179,71,0.12), transparent 32%)', backgroundSize: '36px 36px, 36px 36px, auto' }} />
+            <img src="/images/danish-systems-review.png" alt="Danish Devgan reviewing an industrial system" style={{ position: 'relative', zIndex: 1, width: '112%', maxWidth: 620, height: 'auto', display: 'block', filter: 'drop-shadow(0 28px 55px rgba(0,0,0,0.48))', transform: 'translateY(6px)' }} />
           </div>
           <div className="panel-copy">
             <p className="section-kicker">How Danish reads a plant</p>
