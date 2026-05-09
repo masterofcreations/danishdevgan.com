@@ -183,6 +183,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-pad" style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 0.78fr) minmax(0, 1.22fr)', gap: 56, alignItems: 'center' }}>
+          <div style={{ position: 'relative', minHeight: 520, border: '1px solid rgba(255,255,255,0.1)', borderRadius: 32, background: 'linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012))', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px), radial-gradient(circle at 50% 74%, rgba(255,179,71,0.14), transparent 38%)', backgroundSize: '38px 38px, 38px 38px, auto' }} />
+            <img src="/images/danish-devgan-portrait.png" alt="Danish Devgan" style={{ position: 'relative', zIndex: 1, width: '88%', maxWidth: 390, height: 'auto', display: 'block', filter: 'drop-shadow(0 26px 50px rgba(0,0,0,0.45))' }} />
+          </div>
+          <div>
+            <p className="section-kicker">Who is Danish Devgan?</p>
+            <h2>A plant operator’s eye, applied to business outcomes.</h2>
+            <p style={{ fontSize: 20, lineHeight: 1.85, color: '#b8c0cc', marginBottom: 24 }}>
+              Manufacturing engineering and industrial systems advisor with hands-on experience across plant operations, maintenance, utilities, safety, projects, and capex decisions.
+            </p>
+            <p style={{ fontSize: 20, lineHeight: 1.85, color: '#b8c0cc', marginBottom: 34 }}>
+              I help factory owners see where operational friction becomes lost output, delayed cash, unsafe workarounds, or unnecessary spending.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 14 }}>
+              {['250+ machines managed', '$500K+ capex avoided', '2× throughput improvement', 'Plant-level engineering, maintenance, safety, and operations exposure'].map((item) => (
+                <div key={item} style={{ border: '1px solid rgba(255,255,255,0.09)', borderRadius: 18, padding: 18, color: '#f5f7fa', background: 'rgba(255,255,255,0.025)', lineHeight: 1.45 }}>{item}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad authority-section">
         <div className="container two-column with-visual">
           <div>
