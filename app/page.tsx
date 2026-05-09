@@ -30,30 +30,57 @@ const lossPoints = [
   'Process variables nobody has challenged for years',
 ];
 
+const caseStudies = [
+  {
+    title: 'Throughput was not a capacity problem.',
+    visible: 'Line speed was low and output could not match demand.',
+    hidden: 'The real constraint sat between machine condition, heating behavior, process control, and maintenance dependency.',
+    result: '2× throughput improvement on existing infrastructure.',
+  },
+  {
+    title: 'The cheapest machine is sometimes the one you do not buy.',
+    visible: 'A production requirement looked like a vendor purchase decision.',
+    hidden: 'In-house engineering could deliver the function with better maintainability, lower cost, and stronger ownership.',
+    result: '$500K+ capex avoided through practical machine engineering.',
+  },
+  {
+    title: 'Quality rejection was blamed on the wrong cause.',
+    visible: 'Failures were assumed to be operator or supplier related.',
+    hidden: 'The root cause was found through observation, shop-floor trials, and correction of the actual usage condition.',
+    result: '76% rejection reduction through root-cause correction.',
+  },
+];
+
 const services = [
   {
     title: 'Factory Profit Leak Diagnostic',
-    text: 'A focused review of where operational losses are hiding across downtime, flow, maintenance, process discipline, utilities, safety, and management attention.',
+    bestFor: 'Owners who know profit is under pressure but cannot see one single cause.',
+    text: 'A focused review of downtime, flow, maintenance, safety, utilities, process discipline, and management attention to identify where money is leaking operationally.',
   },
   {
-    title: 'Throughput & Bottleneck Analysis',
-    text: 'Identify why production output does not match real capacity — across machine speed, operator movement, line balance, heating behavior, and process timing.',
+    title: 'Throughput Recovery Review',
+    bestFor: 'Plants where machines are running but output still does not match capacity.',
+    text: 'Find bottlenecks across line speed, operator movement, changeover logic, heating behavior, maintenance dependency, and process timing.',
   },
   {
-    title: 'Capex & Machine Decision Review',
-    text: 'Before approving a major purchase, determine whether the problem needs new equipment, better controls, in-house engineering, or a process correction.',
+    title: 'Capex Decision Second Opinion',
+    bestFor: 'Leaders about to approve machines, systems, expansion, or vendor proposals.',
+    text: 'Determine whether the problem needs new equipment, better controls, in-house engineering, layout correction, or a process fix before capital is locked.',
   },
   {
-    title: 'Maintenance System Improvement',
-    text: 'Move from breakdown reaction to planned prevention through spare logic, alarm visibility, root-cause discipline, and practical shop-floor routines.',
+    title: 'Maintenance Firefighting Reset',
+    bestFor: 'Factories where breakdowns are frequent, urgent, and accepted as normal.',
+    text: 'Move from reaction to prevention with spare logic, alarm visibility, root-cause discipline, maintenance routines, and shop-floor escalation clarity.',
   },
   {
-    title: 'Plant Setup & Expansion Advisory',
-    text: 'Support for new lines, layout, utilities, safety readiness, compliance preparation, vendor decisions, commissioning, and operational go-live planning.',
+    title: 'Plant Expansion Risk Review',
+    bestFor: 'Teams planning new lines, facility expansion, utilities, layout, or commissioning.',
+    text: 'Review operational risks before go-live: flow, access, utilities, safety, maintenance, compliance readiness, vendor scope, and commissioning logic.',
   },
   {
-    title: 'AI-Assisted Manufacturing Systems',
-    text: 'Practical AI use for reporting, SOP discipline, maintenance visibility, workflow tracking, knowledge capture, and decision support — not gimmicks.',
+    title: 'AI-Assisted Operations System',
+    bestFor: 'Manufacturers who want practical AI without gimmicks or disruption theatre.',
+    text: 'Use AI for reporting, SOP discipline, maintenance visibility, workflow tracking, knowledge capture, and decision support around real plant operations.',
   },
 ];
 
@@ -70,10 +97,11 @@ export default function HomePage() {
       <header className="site-header">
         <a className="logo" href="#top" aria-label="Danish Devgan home">
           <span>Danish Devgan</span>
-          <small>Industrial Systems Consultant</small>
+          <small>Industrial systems advisor for factory owners and manufacturing leaders.</small>
         </a>
         <nav>
           <a href="#proof">Proof</a>
+          <a href="#cases">Cases</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -127,6 +155,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-pad authority-section">
+        <div className="container two-column">
+          <div>
+            <p className="section-kicker">Who is reading the plant?</p>
+            <h2>Not a slide-deck consultant. A factory operator who has owned consequences.</h2>
+          </div>
+          <div className="quiet-copy">
+            <p>
+              I have worked inside plants where every decision touched output, machine downtime, safety exposure, dispatch pressure, people on the floor, and capital already committed.
+            </p>
+            <p>
+              That experience changes how problems are diagnosed. The goal is not to sound clever. The goal is to find where the plant is quietly converting engineering friction into financial loss.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad recognition-section">
         <div className="container two-column">
           <div>
@@ -176,6 +221,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-pad case-section" id="cases">
+        <div className="container section-heading">
+          <p className="section-kicker">Operational investigations</p>
+          <h2>Real improvement starts when the assumed problem is challenged.</h2>
+          <p>These are anonymized examples of the thinking pattern: visible symptom, hidden cause, practical correction, measurable business result.</p>
+        </div>
+        <div className="container case-grid">
+          {caseStudies.map((story) => (
+            <article className="case-card" key={story.title}>
+              <h3>{story.title}</h3>
+              <dl>
+                <div><dt>Visible problem</dt><dd>{story.visible}</dd></div>
+                <div><dt>Hidden loss</dt><dd>{story.hidden}</dd></div>
+                <div><dt>Business result</dt><dd>{story.result}</dd></div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section-pad proof-section">
         <div className="container section-heading">
           <p className="section-kicker">Proof without theatre</p>
@@ -201,6 +266,7 @@ export default function HomePage() {
         <div className="container service-grid">
           {services.map((service) => (
             <article className="service-card" key={service.title}>
+              <span>{service.bestFor}</span>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
             </article>
