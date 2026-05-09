@@ -231,7 +231,7 @@ h1 {
     var(--surface);
   border-radius: 28px;
   padding: 32px;
-  min-height: 470px;
+  min-height: 500px;
   box-shadow: 0 28px 100px rgba(0, 0, 0, 0.28);
 }
 
@@ -248,6 +248,7 @@ h1 {
 }
 
 .screen-top,
+.factory-silhouette,
 .flow-map,
 .mini-metrics {
   position: relative;
@@ -260,14 +261,56 @@ h1 {
   gap: 18px;
   color: var(--muted-2);
   font-size: 13px;
-  margin-bottom: 60px;
+  margin-bottom: 34px;
 }
+
+.factory-silhouette {
+  height: 122px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid rgba(255, 179, 71, 0.35);
+}
+
+.factory-silhouette span {
+  position: absolute;
+  display: block;
+}
+
+.factory-silhouette .floor {
+  left: 5%;
+  bottom: 0;
+  width: 86%;
+  height: 38px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.13), rgba(255,255,255,0.035));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+}
+
+.factory-silhouette .roof {
+  left: 12%;
+  bottom: 38px;
+  width: 68%;
+  height: 34px;
+  clip-path: polygon(0 100%, 18% 0, 34% 100%, 52% 0, 68% 100%, 84% 0, 100% 100%);
+  background: rgba(255, 179, 71, 0.22);
+}
+
+.factory-silhouette .chimney {
+  bottom: 54px;
+  width: 28px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px 8px 0 0;
+}
+
+.factory-silhouette .c1 { left: 20%; height: 62px; }
+.factory-silhouette .c2 { right: 18%; height: 88px; }
 
 .flow-map {
   display: grid;
   grid-template-columns: 1fr 52px 1fr 52px 1fr;
   align-items: center;
-  margin-bottom: 54px;
+  margin-bottom: 36px;
 }
 
 .node {
@@ -381,6 +424,62 @@ h2 {
   color: var(--muted);
 }
 
+.visual-copy-card {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.038), rgba(255,255,255,0.014));
+  padding: 30px;
+}
+
+.industrial-mark {
+  position: relative;
+  height: 92px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.16);
+  margin-bottom: 22px;
+}
+
+.industrial-mark .mark-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.industrial-mark .mark-node {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(255,179,71,0.34);
+}
+
+.mark-a { left: 24px; top: 34px; }
+.mark-b { right: 36px; top: 34px; }
+.mark-line {
+  position: absolute;
+  left: 42px;
+  right: 54px;
+  top: 41px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,179,71,0.25), rgba(255,179,71,0.9));
+}
+
+.industrial-mark span {
+  position: absolute;
+  left: 22px;
+  bottom: 14px;
+  color: var(--muted-2);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
 .loss-grid {
   margin-top: 56px;
   display: grid;
@@ -389,19 +488,15 @@ h2 {
 }
 
 .loss-card {
-  min-height: 132px;
-  padding: 24px;
+  min-height: 190px;
+  padding: 22px;
   border: 1px solid var(--border);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.025);
 }
 
-.loss-card span {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
+.loss-card .industrial-mark {
+  height: 70px;
   margin-bottom: 18px;
 }
 
@@ -439,6 +534,29 @@ h2 {
     linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
   background-size: 36px 36px;
 }
+
+.conveyor-line {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 56%;
+  height: 10px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(90deg, rgba(255,179,71,0.8) 0 18px, rgba(255,179,71,0.2) 18px 36px);
+}
+
+.machine-block {
+  position: absolute;
+  width: 88px;
+  height: 76px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035));
+}
+
+.m1 { left: 15%; top: 25%; }
+.m2 { left: 42%; top: 36%; }
+.m3 { right: 15%; top: 23%; }
 
 .pulse {
   position: absolute;
@@ -511,6 +629,12 @@ h2 {
   padding: 32px;
 }
 
+.proof-card .industrial-mark,
+.service-card .industrial-mark,
+.case-card .industrial-mark {
+  height: 74px;
+}
+
 .proof-card strong {
   display: block;
   font-size: 48px;
@@ -535,7 +659,7 @@ h2 {
   font-size: 16px;
 }
 
-.service-card span {
+.service-card span:not(.industrial-mark span) {
   display: block;
   color: var(--accent);
   font-size: 12px;
@@ -747,7 +871,7 @@ h2 {
   }
 
   .factory-screen {
-    min-height: 380px;
+    min-height: 430px;
     padding: 22px;
   }
 
