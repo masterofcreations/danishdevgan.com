@@ -141,29 +141,31 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hero-visual reveal delay-1" aria-label="Industrial systems visual">
-            <div className="factory-screen">
-              <div className="screen-top">
-                <span>Operational Scan</span>
-                <span>Live System View</span>
+          <div className="hero-visual reveal delay-1" aria-label="Factory profit leak diagnostic panel">
+            <div className="diagnostic-panel">
+              <div className="panel-header">
+                <span>Profit Leak Diagnostic</span>
+                <strong>Plant scan</strong>
               </div>
-              <div className="factory-silhouette" aria-hidden="true">
-                <span className="chimney c1" />
-                <span className="chimney c2" />
-                <span className="roof" />
-                <span className="floor" />
+              <div className="diagnostic-row warning">
+                <span>Signal</span>
+                <strong>Frequent stoppages</strong>
+                <em>Output loss</em>
               </div>
-              <div className="flow-map">
-                <div className="node active">Input</div>
-                <div className="line" />
-                <div className="node warn">Bottleneck</div>
-                <div className="line" />
-                <div className="node">Output</div>
+              <div className="diagnostic-row">
+                <span>Signal</span>
+                <strong>Slow flow / waiting</strong>
+                <em>Cash delay</em>
               </div>
-              <div className="mini-metrics">
-                <div><strong>Downtime</strong><span>Margin impact</span></div>
-                <div><strong>Capex</strong><span>Decision risk</span></div>
-                <div><strong>Flow</strong><span>Hidden loss</span></div>
+              <div className="diagnostic-row">
+                <span>Signal</span>
+                <strong>Capex pressure</strong>
+                <em>Capital risk</em>
+              </div>
+              <div className="diagnostic-outcome">
+                <span>What I look for</span>
+                <strong>Root cause before spending</strong>
+                <p>Machine condition, utility stability, layout friction, maintenance dependency, process gaps, and safety exposure.</p>
               </div>
             </div>
           </div>
