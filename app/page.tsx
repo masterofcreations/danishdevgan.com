@@ -366,38 +366,20 @@ export default function HomePage() {
       <section className="section-pad contact-section" id="contact">
         <div className="container contact-card">
           <div className="contact-copy">
-            <p className="section-kicker">Factory Problem Brief</p>
-            <h2>You do not need a perfect brief.</h2>
-            <p>Send the symptom. I will help structure the problem.</p>
+            <p className="section-kicker">Quick contact</p>
+            <h2>No long forms. Your time matters.</h2>
+            <p>Send three quick details. If the problem is worth discussing, I will help structure it from there.</p>
             <p>A sharp diagnosis before capex is often cheaper than one wrong purchase after approval.</p>
-            <a className="text-link" href="https://wa.me/917888839696?text=Hello%20Danish,%20I%20visited%20danishdevgan.com.%20I%20want%20to%20discuss%20a%20factory%20or%20operations%20problem.%0A%0ACompany:%0ARole:%0ACountry:%0AProblem:" target="_blank">Prefer WhatsApp? Send a short note →</a>
+            <a className="text-link" href="https://wa.me/917888839696?text=Hello%20Danish,%20I%20visited%20danishdevgan.com.%20I%20want%20to%20discuss%20a%20factory%20or%20operations%20problem.%0A%0AName:%0AEmail:%0AProblem%20topic:" target="_blank">Prefer faster conversation? Message me on WhatsApp →</a>
           </div>
 
           <form className="brief-form" action="https://formsubmit.co/danish@danishdevgan.com" method="POST">
-            <input type="hidden" name="_subject" value="Factory Problem Brief" />
+            <input type="hidden" name="_subject" value="Quick Factory Problem Topic" />
             <input type="hidden" name="_captcha" value="false" />
-            <div className="form-row">
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="Work email" required />
-            </div>
-            <div className="form-row">
-              <input type="text" name="company" placeholder="Company" required />
-              <input type="text" name="role" placeholder="Role" />
-            </div>
-            <div className="form-row">
-              <input type="text" name="country" placeholder="Country" />
-              <select name="problem_type" defaultValue="">
-                <option value="" disabled>Primary problem area</option>
-                <option>Downtime / breakdowns</option>
-                <option>Throughput / bottleneck</option>
-                <option>Capex / machine decision</option>
-                <option>Maintenance system</option>
-                <option>Plant setup / expansion</option>
-                <option>Safety / compliance risk</option>
-              </select>
-            </div>
-            <textarea name="problem" placeholder="What is happening in the plant?" rows={5} required />
-            <button type="submit" className="primary-btn">Submit Brief</button>
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Work email" required />
+            <input type="text" name="problem_topic" placeholder="Problem topic in 3–5 words" required />
+            <button type="submit" className="primary-btn">Send Problem Topic</button>
           </form>
         </div>
       </section>
