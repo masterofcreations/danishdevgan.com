@@ -84,6 +84,7 @@ button {
   text-decoration: none;
   display: grid;
   gap: 3px;
+  max-width: 410px;
 }
 
 .logo span {
@@ -96,6 +97,7 @@ button {
   color: var(--muted-2);
   font-size: 12px;
   letter-spacing: 0.2px;
+  line-height: 1.35;
 }
 
 .site-header nav {
@@ -481,15 +483,22 @@ h2 {
 }
 
 .proof-grid,
-.service-grid {
+.service-grid,
+.case-grid {
   margin-top: 54px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
+.case-grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
 .proof-card,
 .service-card,
+.case-card,
 .contact-card {
   border: 1px solid var(--border);
   border-radius: 28px;
@@ -497,7 +506,8 @@ h2 {
 }
 
 .proof-card,
-.service-card {
+.service-card,
+.case-card {
   padding: 32px;
 }
 
@@ -509,17 +519,58 @@ h2 {
 }
 
 .proof-card h3,
-.service-card h3 {
+.service-card h3,
+.case-card h3 {
   font-size: 24px;
   line-height: 1.15;
   margin-bottom: 16px;
 }
 
 .proof-card p,
-.service-card p {
+.service-card p,
+.case-card dd,
+.case-card dt {
   color: var(--muted);
   line-height: 1.75;
-  font-size: 17px;
+  font-size: 16px;
+}
+
+.service-card span {
+  display: block;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.55;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 18px;
+}
+
+.case-card dl {
+  display: grid;
+  gap: 18px;
+  margin: 24px 0 0;
+}
+
+.case-card div {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.case-card dt {
+  color: var(--accent);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.case-card dd {
+  margin: 0;
+}
+
+.proof-card p,
+.service-card p {
   margin-bottom: 0;
 }
 
@@ -633,7 +684,8 @@ h2 {
   }
 
   .proof-band-grid,
-  .loss-grid {
+  .loss-grid,
+  .case-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -658,6 +710,11 @@ h2 {
 
   .logo span {
     font-size: 17px;
+  }
+
+  .logo small {
+    font-size: 11px;
+    max-width: 280px;
   }
 
   .hero {
@@ -711,6 +768,7 @@ h2 {
   .loss-grid,
   .proof-grid,
   .service-grid,
+  .case-grid,
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -727,6 +785,7 @@ h2 {
 
   .proof-card,
   .service-card,
+  .case-card,
   .loss-card {
     padding: 24px;
   }
