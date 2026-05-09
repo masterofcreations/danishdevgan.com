@@ -320,21 +320,24 @@ export default function HomePage() {
             <input type="hidden" name="_captcha" value="false" />
             <div className="form-row">
               <input type="text" name="name" placeholder="Name" required />
-              <input type="text" name="company" placeholder="Company" required />
+              <input type="email" name="email" placeholder="Work email" required />
             </div>
             <div className="form-row">
+              <input type="text" name="company" placeholder="Company" required />
               <input type="text" name="role" placeholder="Role" />
-              <input type="text" name="country" placeholder="Country" />
             </div>
-            <select name="problem_type" defaultValue="">
-              <option value="" disabled>Primary problem area</option>
-              <option>Downtime / breakdowns</option>
-              <option>Throughput / bottleneck</option>
-              <option>Capex / machine decision</option>
-              <option>Maintenance system</option>
-              <option>Plant setup / expansion</option>
-              <option>Safety / compliance risk</option>
-            </select>
+            <div className="form-row">
+              <input type="text" name="country" placeholder="Country" />
+              <select name="problem_type" defaultValue="">
+                <option value="" disabled>Primary problem area</option>
+                <option>Downtime / breakdowns</option>
+                <option>Throughput / bottleneck</option>
+                <option>Capex / machine decision</option>
+                <option>Maintenance system</option>
+                <option>Plant setup / expansion</option>
+                <option>Safety / compliance risk</option>
+              </select>
+            </div>
             <textarea name="problem" placeholder="What is happening in the plant?" rows={5} required />
             <button type="submit" className="primary-btn">Submit Brief</button>
           </form>
