@@ -1,22 +1,22 @@
 const proofCards = [
   {
     metric: '7+',
-    label: 'Years in plant operations',
+    label: 'Years inside plant operations',
     detail: 'Hands-on manufacturing leadership across engineering, maintenance, safety, projects, utilities, and production systems.',
   },
   {
     metric: '250+',
-    label: 'Machines managed',
+    label: 'Machines under operational responsibility',
     detail: 'Production lines, utility systems, tool room equipment, presses, extruders, curing systems, and in-house machinery.',
   },
   {
     metric: '$500K+',
-    label: 'Capex avoided',
+    label: 'Capital avoided through practical engineering',
     detail: 'Through in-house machine design, practical engineering, vendor alternatives, and better operational ownership.',
   },
   {
     metric: '2×',
-    label: 'Throughput improvement',
+    label: 'Throughput improvement without defaulting to new machines',
     detail: 'Line-speed gains achieved by diagnosing real bottlenecks instead of defaulting to new equipment.',
   },
 ];
@@ -28,6 +28,15 @@ const lossPoints = [
   'Capex requests made before root-cause clarity',
   'Unsafe workarounds hidden inside routine operations',
   'Process variables nobody has challenged for years',
+];
+
+const callPoints = [
+  'Call me before you approve another machine.',
+  'Call me when the team says “this is normal.”',
+  'Call me when production blames maintenance and maintenance blames production.',
+  'Call me when downtime is explained but not solved.',
+  'Call me when capex feels necessary but the root cause is unclear.',
+  'Call me when the owner knows something is leaking but reports do not show it.',
 ];
 
 const caseStudies = [
@@ -51,36 +60,48 @@ const caseStudies = [
   },
 ];
 
-const services = [
+const serviceGroups = [
   {
-    title: 'Factory Profit Leak Diagnostic',
-    bestFor: 'Owners who know profit is under pressure but cannot see one single cause.',
-    text: 'A focused review of downtime, flow, maintenance, safety, utilities, process discipline, and management attention to identify where money is leaking operationally.',
+    moment: 'Before you spend',
+    signal: 'For capex, expansion, new equipment, vendor proposals, or layout changes.',
+    items: [
+      {
+        title: 'Capex Decision Second Opinion',
+        text: 'Determine whether the problem needs new equipment, better controls, in-house engineering, layout correction, or a process fix before capital is locked.',
+      },
+      {
+        title: 'Plant Expansion Risk Review',
+        text: 'Review operational risks before go-live: flow, access, utilities, safety, maintenance, compliance readiness, vendor scope, and commissioning logic.',
+      },
+    ],
   },
   {
-    title: 'Throughput Recovery Review',
-    bestFor: 'Plants where machines are running but output still does not match capacity.',
-    text: 'Find bottlenecks across line speed, operator movement, changeover logic, heating behavior, maintenance dependency, and process timing.',
+    moment: 'When output is stuck',
+    signal: 'For plants where machines are running, teams are busy, but output still does not match capacity.',
+    items: [
+      {
+        title: 'Throughput Recovery Review',
+        text: 'Find bottlenecks across line speed, operator movement, changeover logic, heating behavior, maintenance dependency, and process timing.',
+      },
+      {
+        title: 'Maintenance Firefighting Reset',
+        text: 'Move from reaction to prevention with spare logic, alarm visibility, root-cause discipline, maintenance routines, and shop-floor escalation clarity.',
+      },
+    ],
   },
   {
-    title: 'Capex Decision Second Opinion',
-    bestFor: 'Leaders about to approve machines, systems, expansion, or vendor proposals.',
-    text: 'Determine whether the problem needs new equipment, better controls, in-house engineering, layout correction, or a process fix before capital is locked.',
-  },
-  {
-    title: 'Maintenance Firefighting Reset',
-    bestFor: 'Factories where breakdowns are frequent, urgent, and accepted as normal.',
-    text: 'Move from reaction to prevention with spare logic, alarm visibility, root-cause discipline, maintenance routines, and shop-floor escalation clarity.',
-  },
-  {
-    title: 'Plant Expansion Risk Review',
-    bestFor: 'Teams planning new lines, facility expansion, utilities, layout, or commissioning.',
-    text: 'Review operational risks before go-live: flow, access, utilities, safety, maintenance, compliance readiness, vendor scope, and commissioning logic.',
-  },
-  {
-    title: 'AI-Assisted Operations System',
-    bestFor: 'Manufacturers who want practical AI without gimmicks or disruption theatre.',
-    text: 'Use AI for reporting, SOP discipline, maintenance visibility, workflow tracking, knowledge capture, and decision support around real plant operations.',
+    moment: 'When profit is unclear',
+    signal: 'For owners who know margin is under pressure but cannot see one single cause.',
+    items: [
+      {
+        title: 'Factory Profit Leak Diagnostic',
+        text: 'A focused review of downtime, flow, maintenance, safety, utilities, process discipline, and management attention to identify where money is leaking operationally.',
+      },
+      {
+        title: 'AI-Assisted Operations System',
+        text: 'Use AI for reporting, SOP discipline, maintenance visibility, workflow tracking, knowledge capture, and decision support around real plant operations.',
+      },
+    ],
   },
 ];
 
@@ -90,8 +111,6 @@ const diagnosisSteps = [
   'Map the operational leakage points',
   'Prioritize low-capex, high-impact corrections',
 ];
-
-const serviceTags = ['diagnose', 'recover', 'review', 'reset', 'de-risk', 'systemize'];
 
 function LossEquation() {
   return (
@@ -105,10 +124,6 @@ function LossEquation() {
       <div className="impact"><strong>EBITDA leak</strong><span>hidden in operations</span></div>
     </div>
   );
-}
-
-function ServiceBadge({ label }: { label: string }) {
-  return <span className="service-badge">{label}</span>;
 }
 
 export default function HomePage() {
@@ -195,11 +210,14 @@ export default function HomePage() {
             <p style={{ fontSize: 20, lineHeight: 1.85, color: '#b8c0cc', marginBottom: 24 }}>
               Manufacturing engineering and industrial systems advisor with hands-on experience across plant operations, maintenance, utilities, safety, projects, and capex decisions.
             </p>
-            <p style={{ fontSize: 20, lineHeight: 1.85, color: '#b8c0cc', marginBottom: 34 }}>
+            <p style={{ fontSize: 20, lineHeight: 1.85, color: '#b8c0cc', marginBottom: 26 }}>
               I help factory owners see where operational friction becomes lost output, delayed cash, unsafe workarounds, or unnecessary spending.
             </p>
+            <p style={{ fontSize: 24, lineHeight: 1.45, color: '#f5f7fa', fontWeight: 750, marginBottom: 34 }}>
+              I am useful when the problem is too operational for consultants and too financial to ignore.
+            </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 14 }}>
-              {['250+ machines managed', '$500K+ capex avoided', '2× throughput improvement', 'Plant-level engineering, maintenance, safety, and operations exposure'].map((item) => (
+              {['250+ machines under operational responsibility', '$500K+ capital avoided through practical engineering', '2× throughput improvement without defaulting to new machines', 'Plant-level engineering, maintenance, safety, and operations exposure'].map((item) => (
                 <div key={item} style={{ border: '1px solid rgba(255,255,255,0.09)', borderRadius: 18, padding: 18, color: '#f5f7fa', background: 'rgba(255,255,255,0.025)', lineHeight: 1.45 }}>{item}</div>
               ))}
             </div>
@@ -248,6 +266,18 @@ export default function HomePage() {
               <p>{point}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section-pad" style={{ paddingTop: 86, paddingBottom: 86 }}>
+        <div className="container" style={{ border: '1px solid rgba(255,255,255,0.09)', borderRadius: 32, padding: 42, background: 'linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012))' }}>
+          <p className="section-kicker">When to call me</p>
+          <h2 style={{ maxWidth: 840 }}>Call me before the plant turns a known symptom into another expensive decision.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 14, marginTop: 34 }}>
+            {callPoints.map((point) => (
+              <div key={point} style={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: 18, padding: 20, color: '#d5dbe5', background: 'rgba(0,0,0,0.18)', lineHeight: 1.55 }}>{point}</div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -312,15 +342,22 @@ export default function HomePage() {
       <section className="section-pad services-section" id="services">
         <div className="container section-heading">
           <p className="section-kicker">Where I can help</p>
-          <h2>Consulting built around operational cash, risk, and throughput.</h2>
+          <h2>Choose the moment you are in.</h2>
+          <p>Factory problems become easier to act on when the service is tied to the decision pressure you are facing right now.</p>
         </div>
         <div className="container service-grid">
-          {services.map((service, index) => (
-            <article className="service-card" key={service.title}>
-              <ServiceBadge label={serviceTags[index]} />
-              <span>{service.bestFor}</span>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
+          {serviceGroups.map((group) => (
+            <article className="service-card" key={group.moment}>
+              <span>{group.signal}</span>
+              <h3>{group.moment}</h3>
+              <div style={{ display: 'grid', gap: 18, marginTop: 24 }}>
+                {group.items.map((service) => (
+                  <div key={service.title} style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 18 }}>
+                    <h4 style={{ margin: '0 0 10px', fontSize: 18, color: '#f5f7fa' }}>{service.title}</h4>
+                    <p>{service.text}</p>
+                  </div>
+                ))}
+              </div>
             </article>
           ))}
         </div>
@@ -330,7 +367,8 @@ export default function HomePage() {
         <div className="container contact-card">
           <div className="contact-copy">
             <p className="section-kicker">Factory Problem Brief</p>
-            <h2>Describe the operational problem.</h2>
+            <h2>You do not need a perfect brief.</h2>
+            <p>Send the symptom. I will help structure the problem.</p>
             <p>A sharp diagnosis before capex is often cheaper than one wrong purchase after approval.</p>
             <a className="text-link" href="https://wa.me/917888839696?text=Hello%20Danish,%20I%20visited%20danishdevgan.com.%20I%20want%20to%20discuss%20a%20factory%20or%20operations%20problem.%0A%0ACompany:%0ARole:%0ACountry:%0AProblem:" target="_blank">Prefer WhatsApp? Send a short note →</a>
           </div>
