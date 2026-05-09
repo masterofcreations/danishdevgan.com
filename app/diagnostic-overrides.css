@@ -1,0 +1,44 @@
+.dark-panel > div[aria-label="Danish reviewing industrial systems"] {
+  min-height: 430px !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.dark-panel > div[aria-label="Danish reviewing industrial systems"] img {
+  width: 168% !important;
+  max-width: none !important;
+  transform: translateX(-2%) translateY(26px) scale(1.02) !important;
+  transform-origin: center bottom !important;
+}
+
+.dark-panel .panel-copy .section-kicker {
+  font-size: 0 !important;
+  margin-bottom: 26px !important;
+}
+
+.dark-panel .panel-copy .section-kicker::after {
+  content: 'How I read the plant';
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3.4px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+@media (max-width: 720px) {
+  .dark-panel > div[aria-label="Danish reviewing industrial systems"] {
+    min-height: 320px !important;
+  }
+
+  .dark-panel > div[aria-label="Danish reviewing industrial systems"] img {
+    width: 156% !important;
+    transform: translateX(-1%) translateY(24px) scale(1.01) !important;
+  }
+
+  .dark-panel .panel-copy .section-kicker::after {
+    font-size: 13px;
+    letter-spacing: 2.8px;
+  }
+}
