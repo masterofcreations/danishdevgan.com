@@ -368,7 +368,7 @@ export default function HomePage() {
           <div className="contact-copy">
             <p className="section-kicker">Quick contact</p>
             <h2>No long forms. Your time matters.</h2>
-            <p>Send three quick details. If the problem is worth discussing, I will help structure it from there.</p>
+            <p>Send three quick details. I will review your note and get back to you with the right next step.</p>
             <p>A sharp diagnosis before capex is often cheaper than one wrong purchase after approval.</p>
             <a className="text-link" href="https://wa.me/917888839696?text=Hello%20Danish,%20I%20visited%20danishdevgan.com.%20I%20want%20to%20discuss%20a%20factory%20or%20operations%20problem.%0A%0AName:%0AEmail:%0AProblem%20topic:" target="_blank">Prefer faster conversation? Message me on WhatsApp →</a>
           </div>
