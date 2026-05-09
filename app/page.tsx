@@ -91,6 +91,18 @@ const diagnosisSteps = [
   'Prioritize low-capex, high-impact corrections',
 ];
 
+function IndustrialMark({ label }: { label: string }) {
+  return (
+    <div className="industrial-mark" aria-hidden="true">
+      <div className="mark-grid" />
+      <div className="mark-node mark-a" />
+      <div className="mark-node mark-b" />
+      <div className="mark-line" />
+      <span>{label}</span>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <main className="page">
@@ -127,6 +139,12 @@ export default function HomePage() {
                 <span>Operational Scan</span>
                 <span>Live System View</span>
               </div>
+              <div className="factory-silhouette" aria-hidden="true">
+                <span className="chimney c1" />
+                <span className="chimney c2" />
+                <span className="roof" />
+                <span className="floor" />
+              </div>
               <div className="flow-map">
                 <div className="node active">Input</div>
                 <div className="line" />
@@ -156,12 +174,13 @@ export default function HomePage() {
       </section>
 
       <section className="section-pad authority-section">
-        <div className="container two-column">
+        <div className="container two-column with-visual">
           <div>
             <p className="section-kicker">Who is reading the plant?</p>
             <h2>Not a slide-deck consultant. A factory operator who has owned consequences.</h2>
           </div>
-          <div className="quiet-copy">
+          <div className="quiet-copy visual-copy-card">
+            <IndustrialMark label="Plant consequence map" />
             <p>
               I have worked inside plants where every decision touched output, machine downtime, safety exposure, dispatch pressure, people on the floor, and capital already committed.
             </p>
@@ -189,9 +208,9 @@ export default function HomePage() {
         </div>
 
         <div className="container loss-grid">
-          {lossPoints.map((point) => (
+          {lossPoints.map((point, index) => (
             <div className="loss-card" key={point}>
-              <span />
+              <IndustrialMark label={`Leak 0${index + 1}`} />
               <p>{point}</p>
             </div>
           ))}
@@ -202,6 +221,10 @@ export default function HomePage() {
         <div className="container dark-panel">
           <div className="schematic" aria-hidden="true">
             <div className="schematic-grid" />
+            <div className="conveyor-line" />
+            <div className="machine-block m1" />
+            <div className="machine-block m2" />
+            <div className="machine-block m3" />
             <div className="pulse p1" />
             <div className="pulse p2" />
             <div className="pulse p3" />
@@ -228,8 +251,9 @@ export default function HomePage() {
           <p>These are anonymized examples of the thinking pattern: visible symptom, hidden cause, practical correction, measurable business result.</p>
         </div>
         <div className="container case-grid">
-          {caseStudies.map((story) => (
+          {caseStudies.map((story, index) => (
             <article className="case-card" key={story.title}>
+              <IndustrialMark label={`Case 0${index + 1}`} />
               <h3>{story.title}</h3>
               <dl>
                 <div><dt>Visible problem</dt><dd>{story.visible}</dd></div>
@@ -248,8 +272,9 @@ export default function HomePage() {
           <p>Not generic advisory. Not spreadsheet-only consulting. The proof comes from plant systems, machines, people, downtime, safety, utilities, and capex decisions handled together.</p>
         </div>
         <div className="container proof-grid detailed">
-          {proofCards.map((card) => (
+          {proofCards.map((card, index) => (
             <article className="proof-card" key={card.label}>
+              <IndustrialMark label={`Proof 0${index + 1}`} />
               <strong>{card.metric}</strong>
               <h3>{card.label}</h3>
               <p>{card.detail}</p>
@@ -264,8 +289,9 @@ export default function HomePage() {
           <h2>Consulting built around operational cash, risk, and throughput.</h2>
         </div>
         <div className="container service-grid">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article className="service-card" key={service.title}>
+              <IndustrialMark label={`System 0${index + 1}`} />
               <span>{service.bestFor}</span>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
