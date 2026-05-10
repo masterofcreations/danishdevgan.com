@@ -134,12 +134,18 @@ export default function HomePage() {
           <span>Danish Devgan</span>
           <small>Industrial systems advisor for factory owners and manufacturing leaders.</small>
         </a>
-        <nav>
-          <a href="#proof">Proof</a>
-          <a href="#cases">Cases</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div className="header-actions">
+          <nav>
+            <a href="#proof">Proof</a>
+            <a href="#cases">Cases</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div className="header-socials" aria-label="Social links">
+            <a className="social-icon linkedin-icon" href="https://www.linkedin.com/in/danishdevgan" target="_blank" aria-label="Message Danish on LinkedIn" />
+            <a className="social-icon whatsapp-icon" href="https://wa.me/917888839696?text=Hello%20Danish,%20I%20visited%20danishdevgan.com.%20I%20want%20to%20discuss%20a%20factory%20or%20operations%20problem.%0A%0AName:%0AEmail:%0AProblem%20topic:" target="_blank" aria-label="Message Danish on WhatsApp" />
+          </div>
+        </div>
       </header>
 
       <section className="hero" id="top">
