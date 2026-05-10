@@ -1,3 +1,5 @@
+const calendlyUrl = 'https://calendly.com/danish-danishdevgan/20min';
+
 const proofCards = [
   {
     metric: '7+',
@@ -157,8 +159,8 @@ export default function HomePage() {
               Downtime, slow lines, wrong capex, reactive maintenance, unsafe systems, and poor flow are not just technical problems. They are margin leaks hiding inside daily operations.
             </p>
             <div className="cta-row">
-              <a className="primary-btn" href="#contact">Start a Factory Problem Brief</a>
-              <a className="secondary-btn" href="https://www.linkedin.com/in/danishdevgan" target="_blank">Message on LinkedIn</a>
+              <a className="primary-btn" href={calendlyUrl} target="_blank">Book 20-Minute Call</a>
+              <a className="secondary-btn" href="#contact">Send Problem Topic</a>
             </div>
           </div>
 
@@ -372,10 +374,11 @@ export default function HomePage() {
       <section className="section-pad contact-section" id="contact">
         <div className="container contact-card">
           <div className="contact-copy">
-            <p className="section-kicker">Quick contact</p>
-            <h2>No long forms. Your time matters.</h2>
-            <p>Send three quick details. I will review your note and get back to you with the right next step.</p>
-            <p>A sharp diagnosis before capex is often cheaper than one wrong purchase after approval.</p>
+            <p className="section-kicker">Preferred next step</p>
+            <h2>Book a 20-minute diagnostic call.</h2>
+            <p>Use it to quickly clarify whether the issue is downtime, throughput, capex risk, maintenance firefighting, or hidden operational leakage.</p>
+            <a className="primary-btn" href={calendlyUrl} target="_blank">Book 20-Minute Call</a>
+            <p style={{ marginTop: 28 }}>Not ready to book? Send three quick details. I will review your note and get back to you with the right next step.</p>
             <a className="text-link" href="https://wa.me/917888839696?text=Hello%20Danish,%20I%20visited%20danishdevgan.com.%20I%20want%20to%20discuss%20a%20factory%20or%20operations%20problem.%0A%0AName:%0AEmail:%0AProblem%20topic:" target="_blank">Prefer faster conversation? Message me on WhatsApp →</a>
           </div>
 
